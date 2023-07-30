@@ -1,48 +1,45 @@
 # Get my Result (GmR)
 
-## Introduction
+![Preview](preview.png)
 
-Get my Result (GmR) is a simple web application that allows students to convert their GPA (Grade Point Average) to Percentage. With GmR, students can quickly calculate their percentage based on their GPA.
+## Overview
+
+Get my Result (GmR) is a simple web application that allows users to perform various result calculations, including GPA to Percentage, Percentage to GPA, and Percentage to Grade. The application provides an intuitive user interface for easy interaction and quick result generation.
 
 ## Features
 
-- Input field to enter the GPA (between 0.00 and 4.00).
-- Convert button to trigger the conversion process.
-- Display of the calculated percentage below the Convert button.
-- Basic error handling for invalid GPA inputs.
+- Calculation Type Selection: Users can choose from three different calculation types, including GPA to Percentage, Percentage to GPA, and Percentage to Grade.
+- Input Validation: The application ensures that the input value falls within the valid range before performing the calculations.
+- Result Display: The converted result is shown instantly below the input fields for quick reference.
 
 ## How to Use
 
-1. Open the `index.html` file in your web browser.
-2. Enter your GPA (between 0.00 and 4.00) in the input field.
-3. Click the "Convert" button to calculate the percentage.
-4. The result will be displayed below the Convert button, showing the calculated percentage.
+1. Access the GmR web page by visiting [https://thedrjbot.github.io/getmyresult/](https://thedrjbot.github.io/getmyresult/).
+2. From the "Calculation Type" dropdown, select the type of calculation you want to perform:
+   - **GPA to Percentage**: Convert GPA to Percentage.
+   - **Percentage to GPA**: Convert Percentage to GPA.
+   - **Percentage to Grade**: Convert Percentage to Grade.
+3. Enter the appropriate value for the selected calculation type in the input field. Ensure the value is valid:
+   - For GPA to Percentage: The GPA should be between 0.00 and 4.00.
+   - For Percentage to GPA: The Percentage should be between 0 and 100.
+   - For Percentage to Grade: The Percentage should be between 0 and 100.
+4. Click the "Calculate" button to obtain the result.
+5. The converted result will be displayed below the button, showing the Percentage, GPA, or Grade, depending on the selected calculation type.
+
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
 
 ## Preview
 
-![GmR Website Preview](preview.png)
+![Preview](preview.png)
 
-## Compatibility
+## Visit the Website
 
-GmR should work in modern web browsers, including but not limited to:
-
-- Google Chrome
-- Mozilla Firefox
-- Microsoft Edge
-- Safari
-
-## Limitations
-
-- GmR assumes a standard GPA scale from 0.00 to 4.00. If your institution uses a different GPA scale, the result may not be accurate.
-- The website does not store or save any user data. All calculations are done locally in the browser.
-
-## Feedback and Contributions
-
-Feedback and contributions are welcome! If you encounter any issues or have suggestions for improvement, please feel free to open an issue or create a pull request on the [GitHub repository](https://github.com/thedrjbot/getmyresult).
+To use Get my Result (GmR), visit the following link: [https://thedrjbot.github.io/getmyresult/](https://thedrjbot.github.io/getmyresult/)
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
-
----
-Developed by DRJ (https://github.com/thedrjbot)
+This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute it as per the terms of the license.
