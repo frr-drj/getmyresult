@@ -2,21 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Get my Result (GmR)</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-      margin: 5px;
-      padding: 5px;
+      background-color: #999;
+     margin:0;
+      padding: 0;
     }
 
     .container {
-      max-width: 600px;
+      width: 600px;
       margin: 0 auto;
       padding: 20px;
       background-color: #fff;
+      text-align: center;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
 
@@ -28,20 +28,27 @@
     .input-section {
       display: flex;
       align-items: center;
+      padding: 10px;
     }
 
-    label {
+    .input-section label {
       margin-right: 10px;
     }
 
-    input {
+    .input-section input {
       padding: 8px;
       border: 1px solid #ccc;
       border-radius: 4px;
       width: 80px;
     }
 
-    button {
+    .input-section select {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .input-section button {
       padding: 8px 16px;
       background-color: #007bff;
       color: #fff;
@@ -54,7 +61,7 @@
       margin-top: 20px;
     }
 
-    p {
+    .result-section p {
       font-size: 18px;
       font-weight: bold;
       text-align: center;
@@ -65,27 +72,61 @@
   <div class="container">
     <h1>Get my Result (GmR)</h1>
     <div class="input-section">
-      <label for="gpa">Enter GPA:</label>
-      <input type="number" id="gpa" step="0.01" min="0" max="4.00" placeholder="0.00">
-      <button onclick="convertGpaToPercentage()">Convert</button>
+      <label for="calculationType">Calculation Type:</label>
+      <select id="calculationType">
+        <option value="gpatopercentage">GPA to Percentage</option>
+        <option value="percentagetogpa">Percentage to GPA</option>
+        <option value="percentagetograde">Percentage to Grade</option>
+      </select>
+      <input type="number" id="inputValue" step="0.01" min="0" max="100" placeholder="0.00">
+      <button onclick="calculateResult()">Calculate</button>
     </div>
     <div class="result-section">
-      <p id="percentageResult"></p>
+      <p id="result"></p>
     </div>
   </div>
-
   <script>
-    function convertGpaToPercentage() {
-      const gpaInput = document.getElementById("gpa");
-      const gpa = parseFloat(gpaInput.value);
-      if (isNaN(gpa) || gpa < 0 || gpa > 4.0) {
-        alert("Please enter a valid GPA between 0.00 and 4.00.");
+    function calculateResult() {
+      const calculationType = document.getElementById("calculationType").value;
+      const inputValue = parseFloat(document.getElementById("inputValue").value);
+
+      if (isNaN(inputValue) || inputValue < 0 || inputValue > 100) {
+        alert("Please enter a valid value.");
         return;
       }
 
-      const percentage = gpa * 25;
-      const percentageResult = document.getElementById("percentageResult");
-      percentageResult.textContent = `Percentage: ${percentage.toFixed(2)}%`;
+      let result;
+      switch (calculationType) {
+        case "gpatopercentage":
+          result = inputValue * 25;
+          document.getElementById("result").textContent = `Percentage: ${result.toFixed(2)}%`;
+          break;
+        case "percentagetogpa":
+          result = inputValue / 25;
+          document.getElementById("result").textContent = `GPA: ${result.toFixed(2)}`;
+          break;
+        case "percentagetograde":
+          if (inputValue >= 90) {
+            result = "A+";
+          } else if (inputValue >= 80) {
+            result = "A";
+          } else if (inputValue >= 70) {
+            result = "B+";
+          } else if (inputValue >= 60) {
+            result = "B";
+          } else if (inputValue >= 50) {
+            result = "C+";
+          } else if (inputValue >= 40) {
+            result = "C";
+          } else {
+            result = "NG";
+          }
+          
+          document.getElementById("result").textContent = `Percentage: ${result}%`;
+          break;
+        default:
+          break;
+      }
     }
   </script>
 </body>
