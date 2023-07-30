@@ -1,6 +1,9 @@
 # Get my Result (GmR)
 
-![Preview](preview.png)
+![Preview](preview1.png) 
+![Preview](preview2.png)
+![Preview](preview3.png) 
+
 
 ## Overview
 
