@@ -17,7 +17,7 @@ Get my Result (GmR) is a simple web application that allows users to perform var
 
 ## How to Use
 
-1. Access the GmR web page by visiting [https://frr-drj.github.io/getmyresult/](https://thedrjbot.github.io/getmyresult/).
+1. Access the GmR web page by visiting [https://frr-drj.github.io/getmyresult/](https://frr-drj.github.io/getmyresult/).
 2. From the "Calculation Type" dropdown, select the type of calculation you want to perform:
    - **GPA to Percentage**: Convert GPA to Percentage.
    - **Percentage to GPA**: Convert Percentage to GPA.
